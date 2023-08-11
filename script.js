@@ -19,6 +19,22 @@ function getComputerChoice() {
     
     }
 
+const computerSelection = getComputerChoice ()
+console.log(computerSelection)
+const playerSelection = "rock"
+function round(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase()
+    if (playerSelection == "rock") {
+        if (computerSelection == "rock") {
+            result = "It's a tie!"
+            return result
+        } else {
+            return "none"
+        }
+    } else {
+        return "wrong"
+    }
+}
 
-new1 = getComputerChoice ()
-console.log(new1)
+console.log(round(playerSelection, computerSelection));
+
