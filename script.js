@@ -19,15 +19,14 @@ function getComputerChoice() {
     
     }
 
-const computerSelection = getComputerChoice ()
-console.log(computerSelection)
 const playerSelection = "rock"
 
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
+    let winner;
     if (playerSelection == "rock") {
         if (computerSelection == "rock") {
-            let winner = "none"
+            winner = "none"
             result = "It's a tie!"
         } else if (computerSelection == "paper") {
             winner = "computer"
@@ -36,7 +35,8 @@ function round(playerSelection, computerSelection) {
             winner = "player"
             result = "You Win! Rock beats scissors!"
         }
-        return result;
+        console.log(result)
+        return winner;
     } else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
             winner = "player"
@@ -48,7 +48,8 @@ function round(playerSelection, computerSelection) {
             winner = "computer"
             result = "You Lose! Scissors beats paper!"
         }
-        return result;
+        console.log(result)
+        return winner;
     } else if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
             winner = "computer"
@@ -60,6 +61,7 @@ function round(playerSelection, computerSelection) {
             winner = "none"
             result = "It's a tie!"
         }
+        console.log(result)
         return winner;
     }
 
@@ -68,23 +70,28 @@ function round(playerSelection, computerSelection) {
     }
 }
 
-let whoWins = round(playerSelection, computerSelection)
-console.log(round(playerSelection, computerSelection));
+
 
 function game() {
+    
     let computerScore = 0;
     let playerScore = 0;
-    for (let index = 0; index < 4; index++) {
-        round(playerSelection, computerSelection);
-        if (whoWins == "computer") {
+    for (let index = 0; index <= 4; index++) {
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+        let winner = round(playerSelection, computerSelection);
+        if (winner == "computer") {
             computerScore++;
-        } else if (whoWins == "player") {
+            continue;
+        } else if (winner == "player") {
             playerScore++;
+            continue;
+        } else {
+            continue;
         }
-        console.log("computer:" + computerScore + ", player:" + playerScore) 
-        return computerScore, playerScore
     }
-
+    finalScore = (`computer:${computerScore}, player:${playerScore}`)
+    return finalScore 
 }
 
 console.log(game())
