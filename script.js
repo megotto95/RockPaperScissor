@@ -19,7 +19,7 @@ function getComputerChoice() {
     
     }
 
-const playerSelection = "rock"
+
 
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
@@ -77,6 +77,7 @@ function game() {
     let computerScore = 0;
     let playerScore = 0;
     for (let index = 0; index <= 4; index++) {
+        let playerSelection = prompt("Choose rock, paper, or scissors")
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
         let winner = round(playerSelection, computerSelection);
