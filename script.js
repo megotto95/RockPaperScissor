@@ -91,7 +91,15 @@ function game() {
         }
     }
     finalScore = (`computer:${computerScore}, player:${playerScore}`)
-    return finalScore 
+    console.log(finalScore)
+    if (playerScore > computerScore) {
+        final = "You win!"
+    } else if (playerScore < computerScore) {
+        final = "Computer wins!"
+    } else {
+        final = "Tie!"
+    }
+    return final
 }
 
 console.log(game())
