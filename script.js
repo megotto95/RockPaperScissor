@@ -19,6 +19,14 @@ function getComputerChoice() {
     
     }
 
+    computerSelection = getComputerChoice();
+    console.log(computerSelection);
+
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', round(rock, computerSelection))
 
 
 function round(playerSelection, computerSelection) {
@@ -72,7 +80,7 @@ function round(playerSelection, computerSelection) {
 
 
 
-function game() {
+/*function game() {
     
     let computerScore = 0;
     let playerScore = 0;
@@ -101,7 +109,7 @@ function game() {
         final = "Tie!"
     }
     return final
-}
+//}
 
-console.log(game())
+//console.log(game())*/
 
