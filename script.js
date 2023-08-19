@@ -19,27 +19,32 @@ function getComputerChoice() {
     
     }
 
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
+    
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+console.log(rock.textContent)
+let results = document.querySelector('#result');
+let score = document.querySelector('#score');
+let computerScore = 0;
+let playerScore = 0;
 
 
-rock.addEventListener('click', function(e) {
-    console.log(e.target);
-});
+{
+rock.addEventListener('click', () => {round("rock", getComputerChoice())}
+);
 
-paper.addEventListener('click', function(e) {
-    console.log(e.target)
-});
+paper.addEventListener('click', () => {round("paper", getComputerChoice())}
+);
 
-scissors.addEventListener('click', function(e) {
-    console.log(e.target)
-});
+scissors.addEventListener('click', () => {round("scissors", getComputerChoice())}
+);
+
 
 function round(playerSelection, computerSelection) {
+
+    console.log(computerSelection)
     playerSelection = playerSelection.toLowerCase()
     let winner;
     if (playerSelection == "rock") {
@@ -49,11 +54,14 @@ function round(playerSelection, computerSelection) {
         } else if (computerSelection == "paper") {
             winner = "computer"
             result = "You Lose! Paper beats rock!"
+            computerScore++
         } else if (computerSelection == "scissors") {
             winner = "player"
             result = "You Win! Rock beats scissors!"
+            playerScore++
         }
-        console.log(result)
+        results.textContent = result
+        score.textContent = "player: " + playerScore + " Computer: " + computerScore
         return winner;
     } else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
@@ -66,7 +74,7 @@ function round(playerSelection, computerSelection) {
             winner = "computer"
             result = "You Lose! Scissors beats paper!"
         }
-        console.log(result)
+        results.textContent = result
         return winner;
     } else if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
@@ -79,7 +87,7 @@ function round(playerSelection, computerSelection) {
             winner = "none"
             result = "It's a tie!"
         }
-        console.log(result)
+        results.textContent = result
         return winner;
     }
 
@@ -88,7 +96,7 @@ function round(playerSelection, computerSelection) {
     }
 }
 
-
+};
 
 /*function game() {
     
