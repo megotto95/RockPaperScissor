@@ -22,12 +22,22 @@ function getComputerChoice() {
     computerSelection = getComputerChoice();
     console.log(computerSelection);
 
-const rock = document.querySelector('#rock')
+const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
-rock.addEventListener('click', round(rock, computerSelection))
 
+rock.addEventListener('click', function(e) {
+    console.log(e.target);
+});
+
+paper.addEventListener('click', function(e) {
+    console.log(e.target)
+});
+
+scissors.addEventListener('click', function(e) {
+    console.log(e.target)
+});
 
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
